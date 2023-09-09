@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msnmsg.Client", "msnmsg.Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msnmsg.Server", "msnmsg.Server\msnmsg.Server.csproj", "{4B4CA342-F60D-46FA-A63C-4BB4D53778BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msnmsg.ClientTesting", "msnmsg.ClientTesting\msnmsg.ClientTesting.csproj", "{57C3E07F-3503-42FF-B9D8-922500F48F52}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{4B4CA342-F60D-46FA-A63C-4BB4D53778BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B4CA342-F60D-46FA-A63C-4BB4D53778BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B4CA342-F60D-46FA-A63C-4BB4D53778BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C3E07F-3503-42FF-B9D8-922500F48F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C3E07F-3503-42FF-B9D8-922500F48F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C3E07F-3503-42FF-B9D8-922500F48F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C3E07F-3503-42FF-B9D8-922500F48F52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
