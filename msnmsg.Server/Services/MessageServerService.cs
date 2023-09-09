@@ -4,11 +4,11 @@ using msnmsg.Server;
 
 namespace msnmsg.Server.Services;
 
-public class ReceiveMessageService : MsnMsgServer.MsnMsgServerBase
+public class MessageServerService : MsnMsgServer.MsnMsgServerBase
 {
-    private readonly ILogger<ReceiveMessageService> _logger;
+    private readonly ILogger<MessageServerService> _logger;
 
-    public ReceiveMessageService(ILogger<ReceiveMessageService> logger)
+    public MessageServerService(ILogger<MessageServerService> logger)
     {
         _logger = logger;
     }
