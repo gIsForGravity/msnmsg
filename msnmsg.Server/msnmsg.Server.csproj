@@ -12,8 +12,5 @@
         <PackageReference Include="Google.Protobuf.Tools" Version="3.24.3" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Protobuf Include="Protos\greet.proto" />
-    </ItemGroup>
 
 </Project>

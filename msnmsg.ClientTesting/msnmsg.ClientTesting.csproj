@@ -13,8 +13,5 @@
       <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
     </ItemGroup>
 
-    <ItemGroup>
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Client"  />
-    </ItemGroup>
 
 </Project>

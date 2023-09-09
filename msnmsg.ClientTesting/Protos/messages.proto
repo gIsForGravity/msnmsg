@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "msnmsg.Protocol";
+
+service MsnMsgServer {
+  rpc OpenStream (OpenStreamArgs) returns (stream MessageInfo);
+  rpc SendMessage (MessageInfo) returns (SendMessageResult);
+}
+
+message MessageInfo {
+  string message = 1;
+  string name = 2;
+}
+
+message SendMessageResult {
+  bool succeeded = 1;
+}
+
+message OpenStreamArgs {
+
+}
