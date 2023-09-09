@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Net.Security;
+using Grpc.Core;
 using Grpc.Net.Client;
 using msnmsg.Protocol;
 
@@ -12,25 +13,42 @@ var client = new MsnMsgServer.MsnMsgServerClient(channel);
 
 var serverMsgStream = client.OpenStream(new OpenStreamArgs());
 
-while (true)
+Task.Run(() => LoopRetrieveMessage(serverMsgStream));
+LoopSendMessage();
+
+void LoopSendMessage()
 {
-    string? msg = Console.ReadLine();
-
-    if (msg != null)
+    while (true)
     {
-        Console.WriteLine("sending message: " + msg);
-        client.SendMessage(new MessageInfo
+        string? msg = Console.ReadLine();
+
+        if (msg != null)
         {
-            Message = msg,
-            Name = CLIENT_USERNAME
-        });
-        
-        Console.WriteLine("Sent!");
+            Console.WriteLine("sending message: " + msg);
+            client.SendMessage(new MessageInfo
+            {
+                Message = msg,
+                Name = CLIENT_USERNAME
+            });
+
+            Console.WriteLine("Sent!");
+        }
     }
+}
 
-    MessageInfo currentStream = serverMsgStream.ResponseStream.Current;
-    Console.WriteLine(currentStream.Name + ":\n" + currentStream.Message);
+async void LoopRetrieveMessage(AsyncServerStreamingCall<MessageInfo> messageStream)
+{
+    MessageInfo? message;
 
+    do
+    {
+        await messageStream.ResponseStream.MoveNext();
+        message = messageStream.ResponseStream.Current;
+        
+        if (message != null)
+            Console.WriteLine($"{message.Name}: {message.Message}");
+
+    } while (message != null);
 }
 
 
