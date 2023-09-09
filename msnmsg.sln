@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msnmsg.Server", "msnmsg.Server\msnmsg.Server.csproj", "{05C58DA6-F5BE-4241-A3A4-E033D7105011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "msnmsg.Client", "msnmsg.Client\msnmsg.Client.csproj", "{0BA8400E-1137-44B2-BD51-C6923741AD66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05C58DA6-F5BE-4241-A3A4-E033D7105011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C58DA6-F5BE-4241-A3A4-E033D7105011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C58DA6-F5BE-4241-A3A4-E033D7105011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C58DA6-F5BE-4241-A3A4-E033D7105011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BA8400E-1137-44B2-BD51-C6923741AD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BA8400E-1137-44B2-BD51-C6923741AD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BA8400E-1137-44B2-BD51-C6923741AD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BA8400E-1137-44B2-BD51-C6923741AD66}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
