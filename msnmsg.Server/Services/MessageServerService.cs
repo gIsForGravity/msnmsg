@@ -8,10 +8,11 @@ namespace msnmsg.Server.Services;
 public class MessageServerService : MsnMsgServer.MsnMsgServerBase
 {
     private readonly ILogger<MessageServerService> _logger;
-    private List<Channel<MessageInfo>> _userChannels = new();
+    private static List<Channel<MessageInfo>> _userChannels = new();
 
     public MessageServerService(ILogger<MessageServerService> logger)
     {
+        Console.WriteLine("new service");
         _logger = logger;
     }
 
@@ -41,5 +42,7 @@ public class MessageServerService : MsnMsgServer.MsnMsgServerBase
         {
             await responseStream.WriteAsync(message);
         }
+        
+        Console.WriteLine("done");
     }
 }
