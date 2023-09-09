@@ -50,7 +50,20 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="Google.Protobuf" Version="3.24.3" />
+        <PackageReference Include="Google.Protobuf.Tools" Version="3.24.3" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Protobuf Include="Protos\greet.proto">
+        <GrpcServices>Both</GrpcServices>
+        <Access>Public</Access>
+        <ProtoCompile>True</ProtoCompile>
+        <CompileOutputs>True</CompileOutputs>
+        <OutputDir>obj\Debug\net7.0\</OutputDir>
+      </Protobuf>
     </ItemGroup>
 
 </Project>
