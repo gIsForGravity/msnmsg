@@ -51,9 +51,17 @@
 
     <ItemGroup>
         <PackageReference Include="Google.Protobuf" Version="3.24.3" />
-        <PackageReference Include="Google.Protobuf.Tools" Version="3.24.3" />
+        <PackageReference Include="Grpc.Tools" Version="2.57.0" />
         <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0"/>
+    </ItemGroup>
+    
+    <!--<ItemGroup>
+        <Protobuf Include="Protos/messages.proto" />
+    </ItemGroup>-->
+    
+    <ItemGroup>
+      <Folder Include="obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Protos\" />
     </ItemGroup>
 
 
