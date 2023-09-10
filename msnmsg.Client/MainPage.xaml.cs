@@ -56,6 +56,14 @@ public partial class MainPage : ContentPage
     
     private void AddMessage(string msg)
     {
-        MessageBox.Text += msg + "\n";
+        MessageStack.Children.Add(new Label
+        {
+            Text = msg,
+            FontSize = 16,
+            HorizontalOptions = LayoutOptions.Start,
+        });
+        
+        MessageStackView.ScrollToAsync(MessageStack, ScrollToPosition.End, false);
+        // MessageBox.Text += msg + "\n";
     }
 }
