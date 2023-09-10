@@ -16,8 +16,9 @@ public partial class MainPage : ContentPage
         _client = new MsnMsgServer.MsnMsgServerClient(channel);
         
         var serverMsgStream = _client.OpenStream(new OpenStreamArgs());
-
+        
         Task.Run(() => LoopRetrieveMessage(serverMsgStream));
+        
         InitializeComponent();
     }
     
@@ -37,15 +38,18 @@ public partial class MainPage : ContentPage
 
     async Task LoopRetrieveMessage(AsyncServerStreamingCall<MessageInfo> messageStream)
     {
+        
         MessageInfo? message;
 
         do
         {
             await messageStream.ResponseStream.MoveNext();
             message = messageStream.ResponseStream.Current;
-        
+
             if (message != null)
-                AddMessage($"{message.Name}: {message.Message}");
+            {
+                await MainThread.InvokeOnMainThreadAsync(() => AddMessage($"{message.Name}: {message.Message}"));
+            }
 
         } while (message != null);
     }
