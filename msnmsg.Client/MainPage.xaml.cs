@@ -42,6 +42,24 @@ public partial class MainPage : ContentPage
             return;
         }
 
+        if (text.StartsWith("/me"))
+        {
+            string message = text.Replace("/me", null).Trim();
+            
+            _client.SendMessage(new MessageInfo
+            {
+                Message = $"{_clientUsername} {message}",
+                Name = ""
+            });
+
+            return;
+        }
+        
+        if (text.StartsWith("/shrug"))
+        {
+            text = text.Trim() + " \u00af\\_(ツ)_/\u00af";
+        }
+
         _client.SendMessage(new MessageInfo
         {
             Message = text,
