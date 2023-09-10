@@ -57,7 +57,7 @@ public partial class MainPage : ContentPage
         
         if (text.StartsWith("/shrug"))
         {
-            string message = text.Replace("/me", null).Trim() + " \u00af\\_(ツ)_/\u00af";
+            string message = text.Replace("/shrug", null).Trim() + " \u00af\\_(ツ)_/\u00af";
             
             _client.SendMessage(new MessageInfo
             {
