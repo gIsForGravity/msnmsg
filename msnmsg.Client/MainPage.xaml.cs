@@ -7,7 +7,7 @@ using msnmsg.Protocol;
 public partial class MainPage : ContentPage
 {
 
-    private const string CLIENT_USERNAME = "User";
+    private string _clientUsername = "Finn";
     private MsnMsgServer.MsnMsgServerClient _client;
     
     public MainPage()
@@ -28,10 +28,24 @@ public partial class MainPage : ContentPage
         string text = entry.Text;
         entry.Text = "";
 
+        if (text.StartsWith("/setname"))
+        {
+            string newName = text.Replace("/setname", null).Trim();
+            
+            _client.SendMessage(new MessageInfo
+            {
+                Message = $"{_clientUsername} has changed their name to {newName}.",
+                Name = ""
+            });
+            _clientUsername = newName;
+
+            return;
+        }
+
         _client.SendMessage(new MessageInfo
         {
             Message = text,
-            Name = CLIENT_USERNAME
+            Name = _clientUsername
         });
         
     }
