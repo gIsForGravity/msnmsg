@@ -7,8 +7,7 @@ using msnmsg.Protocol;
 
 const string CLIENT_USERNAME = "ClientUser";
 
-Console.WriteLine("connecting to server");
-using var channel = GrpcChannel.ForAddress("http://localhost:5000");
+using var channel = GrpcChannel.ForAddress("http://192.168.137.1:5151");
 var client = new MsnMsgServer.MsnMsgServerClient(channel);
 
 var serverMsgStream = client.OpenStream(new OpenStreamArgs());
