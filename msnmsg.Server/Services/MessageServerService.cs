@@ -38,6 +38,13 @@ public class MessageServerService : MsnMsgServer.MsnMsgServerBase
         // add to the list of channels
         _userChannels.Add(messageChannel);
         
+        // send intro message
+        await responseStream.WriteAsync(new MessageInfo
+        {
+            Message = "Welcome to the server! Use /setname to change your name.",
+            Name = ""
+        });
+        
         await foreach (var message in messageChannel.Reader.ReadAllAsync())
         {
             await responseStream.WriteAsync(message);
