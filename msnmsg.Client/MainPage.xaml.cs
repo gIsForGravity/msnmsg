@@ -7,7 +7,7 @@ using msnmsg.Protocol;
 public partial class MainPage : ContentPage
 {
 
-    private string _clientUsername = "Finn";
+    private string _clientUsername = "User";
     private MsnMsgServer.MsnMsgServerClient _client;
     
     public MainPage()
